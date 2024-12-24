@@ -9,6 +9,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     environment: secrets  # Specify the environment where the secrets are defined
+
     steps:
     # Step 1: Checkout the code
     - name: Checkout code
@@ -24,6 +25,7 @@ jobs:
         echo "DOCKER_USERNAME is set to: ${{ secrets.DOCKER_USERNAME }}"
         echo "DOCKER_PASSWORD is set to: $DOCKER_PASSWORD"
       env:
+        ACTIONS_STEP_DEBUG: true
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     # Step 4: Log in to DockerHub
