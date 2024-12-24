@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  flaskapp:
+    image: sibichandran2001/flaskapp:latest
+    ports:
+      - "8080:5000"
